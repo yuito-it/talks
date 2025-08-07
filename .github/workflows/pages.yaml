@@ -17,13 +17,15 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Copy Index.html
+        run: |
+          mkdir -p output
+          cp -r src/* output/
+
       - name: Run Scripts
         run: |
           chmod +x scripts/allbuild.sh
           ./scripts/allbuild.sh
-      - name: Copy Index.html
-        run: |
-          cp -r src/* output/
 
       - uses: actions/upload-artifact@v4
         with:
