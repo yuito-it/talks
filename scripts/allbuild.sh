@@ -8,9 +8,10 @@ for pkg in $(find slides -type f -name package.json); do
   echo "==== $slide_dir ===="
   cd "$slide_dir" || continue
   bun install
+  ls
   # 出力先をoutput/以下に再現する
   rel_path=${slide_dir#slides/}
-  bun build --outdir "../../output/$rel_path" --base "/$rel_path" --download "true"
+  bun build slides.md --outdir "../../output/$rel_path" --base "/$rel_path" --download "true"
   ls -l "../../output/$rel_path"
   cd - > /dev/null
 done
