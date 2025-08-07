@@ -10,7 +10,7 @@ for pkg in $(find slides -type f -name package.json); do
   bun install
   # 出力先をoutput/以下に再現する
   rel_path=${slide_dir#slides/}
-  bunx slidev -o "../../output/$rel_path" --base "/$rel_path" --download true
+  bun build -o "../../output/$rel_path" --base "/$rel_path" --download true
   ls -l "../../output/$rel_path"
   cd - > /dev/null
 done
