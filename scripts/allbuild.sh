@@ -11,7 +11,9 @@ for pkg in $(find slides -type f -name package.json); do
   ls
   # 出力先をoutput/以下に再現する
   rel_path=${slide_dir#slides/}
-  bun run build slides.md -o "../../output/$rel_path" --base "/$rel_path" --download "true"
+  bun run build slides.md -o "./dist" --base "/$rel_path" --download "true"
+  mkdir -p ../../output/$rel_path/
+  cp -r ./dist/* "../../output/$rel_path/"
   ls -l "../../output"
   cd - > /dev/null
 done
