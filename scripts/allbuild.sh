@@ -1,12 +1,15 @@
 #!/bin/bash
 
-mkdir output
+mkdir -p output
 
-for dir in $(find slides -type d); do
-  for subdir in $(find $dir/. -type d); do
-    echo "==== $subdir ===="
-    cd "$dir/$subdir"
-    bun install
-    bunx slidev -y -o ../../output/$dir/$subdir --base "/$dir/$subdir" --download true
-  done
+# slides配下のpackage.jsonがあるディレクトリだけを対象にする！
+for pkg in $(find slides -type f -name package.json); do
+  slide_dir=$(dirname "$pkg")
+  echo "==== $slide_dir ===="
+  cd "$slide_dir" || continue
+  bun install
+  # 出力先をoutput/以下に再現する
+  rel_path=${slide_dir#slides/}
+  bunx slidev -y -o "../../output/$rel_path" --base "/$rel_path" --download true
+  cd - > /dev/null
 done
