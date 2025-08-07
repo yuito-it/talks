@@ -19,9 +19,8 @@ jobs:
 
       - name: Run Scripts
         run: |
-          bun install
-          bun run build
-
+          chmod +x scripts/allbuild.sh
+          ./scripts/allbuild.sh
       - name: Copy Index.html
         run: |
           cp -r src/* output/
