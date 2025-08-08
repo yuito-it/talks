@@ -27,11 +27,6 @@ jobs:
           chmod +x scripts/allbuild.sh
           ./scripts/allbuild.sh
 
-      - name: Test
-        run: |
-          ls -la output
-          bun install
-
       - uses: actions/upload-artifact@v4
         with:
           name: my_site
