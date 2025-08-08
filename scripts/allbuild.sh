@@ -24,7 +24,7 @@ for pkg in $(find slides -type f -name package.json); do
 
   target_dir="$ROOT_DIR/output/$rel_path"
   mkdir -p "$target_dir"
-  cp -r dist "$target_dir/"
+  cp -r dist/* "$target_dir/"
   echo "Copied to $target_dir"
   ls -l "$target_dir"
 
