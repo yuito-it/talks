@@ -34,9 +34,6 @@ jobs:
           node-version: 18
           check-latest: true
 
-      - name: Install Vercel CLI
-        run: bun install --global vercel@latest
-
       - name: Download artifact
         uses: actions/download-artifact@v5
         with:
