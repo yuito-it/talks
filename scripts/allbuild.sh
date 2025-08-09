@@ -24,9 +24,18 @@ for pkg in $(find slides -type f -name package.json); do
 
   target_dir="$ROOT_DIR/output/$rel_path"
   mkdir -p "$target_dir"
-  cp -r dist/* "$target_dir/"
+  cp -r "dist/*" "$target_dir/"
+  cp -r "static" "$target_dir/static"
   echo "Copied to $target_dir"
   ls -l "$target_dir"
+
+  echo "Add redirect rules to vercel.json..."
+  cd "$ROOT_DIR"
+  node "$ROOT_DIR/scripts/node/vercel.js" "/$rel_path/(.*)" "/$rel_path/index.html" "200" || {
+    echo "Failed to add redirect rules in $slide_dir"
+    cd "$ROOT_DIR"
+    continue
+  }
 
   cd "$ROOT_DIR"
 done

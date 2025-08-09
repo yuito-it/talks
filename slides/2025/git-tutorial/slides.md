@@ -27,7 +27,7 @@ seoMeta:
   ogImage: auto
   # ogImage: https://cover.sli.dev
 layout: intro-image-right
-image: "./imgs/git.png"
+image: "./static/imgs/git.png"
 ---
 
 # Gitを使おう！！！
@@ -47,7 +47,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 ---
 transition: fade-out
 layout: image-right
-image: ./imgs/icon.png
+image: ./static/imgs/icon.png
 ---
 
 # 自己紹介
