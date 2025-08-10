@@ -47,7 +47,7 @@ jobs:
           path: ./output
       
       - name: Test
-        run: ls output
+        run: tree output
 
       - uses: amondnet/vercel-action@v25 #deploy
         with:
