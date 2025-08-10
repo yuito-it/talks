@@ -16,6 +16,12 @@ jobs:
       - name: Run the script
         run: scripts/allbuild.sh
 
+      - name: Copy src
+        run: cp -r src/* output
+
+      - name: Copy vercel.json
+        run: cp vercel.json output
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
