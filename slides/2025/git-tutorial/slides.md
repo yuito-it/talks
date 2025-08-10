@@ -7,7 +7,7 @@ theme: apple-basic
 # some information about your slides (markdown enabled)
 title: Gitを使おう！
 info: |
-  ## Gitを使おう！ 2025/08/09
+  ## Gitを使おう！
   Gitを使うとなぜ便利か、基本的な使い方とGitHubのPush/Pullを学びます。
 # apply unocss classes to the current slide
 # class: text-center
