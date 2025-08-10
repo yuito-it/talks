@@ -5,12 +5,10 @@ theme: apple-basic
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: Git Tutorial
+title: Gitを使おう！
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## Gitを使おう！ 2025/08/09
+  Gitを使うとなぜ便利か、基本的な使い方とGitHubのPush/Pullを学びます。
 # apply unocss classes to the current slide
 # class: text-center
 # https://sli.dev/features/drawing
@@ -26,8 +24,17 @@ seoMeta:
   # or generate one from the first slide if not found.
   ogImage: auto
   # ogImage: https://cover.sli.dev
+  twitterSite: yuito_it_
+  twitterCard: summary_large_image
+  articleAuthor: "Yuito Akatsuki"
+  articlePublishedTime: '2025-08-09'
+  articleModifiedTime: '2025-08-09'
 layout: intro-image-right
 image: "./static/imgs/git.png"
+talksSiteMetadata:
+  topic: Git Tutorial
+  info: |
+    Learn why we are using Git and how to use Git and GitHub simply.
 ---
 
 # Gitを使おう！！！
