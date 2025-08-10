@@ -1,5 +1,5 @@
 async function getSlides() {
-  const response = await fetch("/src/data/slides.json");
+  const response = await fetch("/data/slides.json");
   const scheduleData = await response.json();
   return scheduleData.data;
 }
