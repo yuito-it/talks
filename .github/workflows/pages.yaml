@@ -52,6 +52,12 @@ jobs:
       - name: Set Curentry Directory
         run: cd output
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
       - name: Link Vercel Project
         run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{secrets.PROJECT_ID}} --yes
       - name: Deploy with Vercel
