@@ -45,7 +45,7 @@ jobs:
         with:
           name: output
           path: ./output
-      
+
       - name: Test
         run: tree output
 
@@ -54,17 +54,20 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
-      
+
       - name: Install Vercel CLI
         run: npm install -g vercel
 
       - name: Link Vercel Project
         run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{secrets.PROJECT_ID}} --yes
+
       - name: Deploy with Vercel
         run: vercel deploy --prod -f --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
+
       - name: Set release url
         id: get_release_url
         run: echo release_url="https://gakuseibot.pkopko.jp" >> $GITHUB_OUTPUT
+
       - name: Faild Log
         if: failure()
         run: |
@@ -72,6 +75,7 @@ jobs:
             cat error.txt
             exit 1
           fi
+
       - name: Show Deployment URL
         run: |
           deploy_url=$(cat deployment-url.txt) >> $GITHUB_ENV
