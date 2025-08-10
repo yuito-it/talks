@@ -15,15 +15,14 @@ let vercelConfig = {};
 if (fs.existsSync(vercelJsonPath)) {
   vercelConfig = JSON.parse(fs.readFileSync(vercelJsonPath, 'utf-8'));
 }
-if (!vercelConfig.redirects) {
-  vercelConfig.redirects = [];
+if (!vercelConfig.rewrites) {
+  vercelConfig.rewrites = [];
 }
 
-vercelConfig.redirects.push({
+vercelConfig.rewrites.push({
   source,
   destination,
-  statusCode: Number(statuscode),
 });
 
 fs.writeFileSync(vercelJsonPath, JSON.stringify(vercelConfig, null, 2), 'utf-8');
-console.log('[Success] Updated vercel.json with new redirect:', { source, destination, statusCode: statuscode });
+console.log('[Success] Updated vercel.json with new redirect:', { source, destination });

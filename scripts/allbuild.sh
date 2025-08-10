@@ -31,7 +31,7 @@ for pkg in $(find slides -type f -name package.json); do
 
   echo "Add redirect rules to vercel.json..."
   cd "$ROOT_DIR"
-  node "$ROOT_DIR/scripts/node/vercel.js" "/$rel_path/(.*)" "/$rel_path/index.html" "200" || {
+  node "$ROOT_DIR/scripts/node/vercel.js" "/$rel_path/(.*)" "/$rel_path/index.html" || {
     echo "Failed to add redirect rules in $slide_dir"
     cd "$ROOT_DIR"
     continue
