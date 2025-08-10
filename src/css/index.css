@@ -1,0 +1,158 @@
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background: #0a1a2f;
+  color: #e5e7eb;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(90deg, #22304a 0%, #1e293b 100%);
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #e5e7eb;
+}
+
+header a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid #60a5fa;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+header a:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+  background: #16213a;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,58,138,0.18);
+  padding: 2rem 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  color: #60a5fa;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  background: #16213a;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,58,138,0.18);
+  overflow: hidden;
+}
+thead th {
+  background: #22304a;
+  color: #60a5fa;
+  font-weight: bold;
+  padding: 1rem 0.7rem;
+  border-radius: 0;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+tbody td {
+  padding: 1rem 0.7rem;
+  border-bottom: 1px solid #22304a;
+  text-align: center;
+  font-size: 1rem;
+  color: #e5e7eb;
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}
+tbody tr {
+  transition: background 0.2s;
+}
+tbody tr:hover {
+  background: #22304a;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.talk-card {
+  background: #22304a;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.18);
+  padding: 1.2rem 1rem;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.talk-info h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  color: #60a5fa;
+}
+.talk-info span {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+.talk-export {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.7rem;
+}
+.talk-export a {
+  background: #1e293b;
+  color: #60a5fa;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.talk-export a:hover {
+  background: #60a5fa;
+  color: #1e293b;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0 0.3rem;
+  }
+  section {
+    padding: 1.2rem 0.5rem;
+  }
+  .list-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .talk-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

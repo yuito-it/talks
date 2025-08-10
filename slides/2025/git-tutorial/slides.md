@@ -32,6 +32,9 @@ seoMeta:
 layout: intro-image-right
 image: "./static/imgs/git.png"
 talksSiteMetadata:
+  event: UniPro
+  date: "2025-08-09"
+  location: Online
   topic: Git Tutorial
   info: |
     Learn why we are using Git and how to use Git and GitHub simply.
