@@ -28,17 +28,17 @@ seoMeta:
   twitterSite: yuito_it_
   twitterCard: summary_large_image
   articleAuthor: "Yuito Akatsuki"
-  articlePublishedTime: '2025-08-09'
-  articleModifiedTime: '2025-08-09'
+  articlePublishedTime: '2025-08-13'
+  articleModifiedTime: '2025-08-13'
 layout: intro-image
 image: "./static/imgs/k8s.webp"
 talksSiteMetadata:
-  event: UniPro
-  date: "2025-08-09"
-  location: Online
-  topic: Git Tutorial
+  event: All-Japan Security Camp 2025
+  date: "2025-08-14"
+  location: Tokyo
+  topic: Starting K8s (and enhancing security)
   info: |
-    Learn why we are using Git and how to use Git and GitHub simply.
+    K8sやってるよっていう話と広告とセキュリティやり始めたよという話。
 ---
 
 <div class="absolute top-10">
