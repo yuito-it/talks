@@ -6,6 +6,13 @@
       "location": "Online",
       "topic": "Git Tutorial",
       "language": "日本語"
+    },
+    {
+      "date": "2025-08-13",
+      "event": "All-Japan Security Camp 2025",
+      "location": "Tokyo",
+      "topic": "Starting K8s (and enhancing security)",
+      "language": "日本語"
     }
   ]
 }
