@@ -13,6 +13,13 @@
       "location": "Tokyo",
       "topic": "Starting K8s (and enhancing security)",
       "language": "日本語"
+    },
+    {
+      "date": "2025-08-30",
+      "event": "UniProject Summer LT 2025",
+      "location": "Online",
+      "topic": "Recommend Secamp",
+      "language": "日本語"
     }
   ]
 }
