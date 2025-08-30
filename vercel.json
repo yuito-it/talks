@@ -1,5 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": ".",
-  "rewrites": []
+  "rewrites": [
+    {
+      "source": "/2025/seccamp/(.*)",
+      "destination": "/2025/seccamp/index.html"
+    },
+    {
+      "source": "/2025/git-tutorial/(.*)",
+      "destination": "/2025/git-tutorial/index.html"
+    }
+  ]
 }
