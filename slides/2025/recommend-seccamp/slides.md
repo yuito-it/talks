@@ -28,13 +28,13 @@ seoMeta:
   twitterSite: yuito_it_
   twitterCard: summary_large_image
   articleAuthor: "Yuito Akatsuki"
-  articlePublishedTime: "2025-08-13"
-  articleModifiedTime: "2025-08-13"
+  articlePublishedTime: "2025-08-30"
+  articleModifiedTime: "2025-08-30"
 layout: intro-image
 image: "./static/imgs/seccamp-logo.webp"
 talksSiteMetadata:
   event: UniProject Summer LT 2025
-  date: "2025-08-14"
+  date: "2025-08-30"
   location: Online
   topic: Recommend Secamp
   info: |
