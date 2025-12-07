@@ -5,9 +5,9 @@ theme: ../../../common/theme/UniPro_2
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: UniProのセキュリティ〜KubernetesとUniQUEの未来〜
+title: UniProインフラのセキュリティ〜KubernetesとUniQUEの未来〜
 info: |
-  ## UniProのセキュリティ〜KubernetesとUniQUEの未来〜
+  ## UniProインフラのセキュリティ〜KubernetesとUniQUEの未来〜
   Kubernetesマルチテナントの今後とUniQUEの完成と活用に関して話します。
 # apply unocss classes to the current slide
 # class: text-center
@@ -39,6 +39,8 @@ talksSiteMetadata:
   topic: Next Step of UniQUE and K8s
   info: |
     Kubernetesマルチテナントの今後とUniQUEの完成と活用に関して話します。
+duration: 10min
+timer: countdown
 ---
 
 <div class="absolute top-10">
@@ -48,7 +50,7 @@ talksSiteMetadata:
 </div>
 
 <div class="absolute bottom-3">
-  <h1>UniProのセキュリティ</h1>
+  <h1>UniProインフラのセキュリティ</h1>
   <p>〜KubernetesとUniQUEの未来〜</p>
 </div>
 
@@ -78,6 +80,7 @@ transition: fade
         <ul class="list-disc list-inside ml-4">
           <li>デジタル創作サークルUniProject</li>
           <li>S高等学校</li>
+          <li>セキュリティ・キャンプ協議会 コミュニティ支援グループ</li>
         </ul>
       </div>
     </v-animate>
@@ -95,353 +98,306 @@ transition: fade
 
 ---
 
-# セキュリティキャンプとは何か
+# Agenda
 
-> 「セキュリティ・キャンプ」は、学生に対して情報セキュリティに関する高度な技術教育を実施し、次代を担う情報セキュリティ人材を発掘・育成する事業です。
-> <small>IPAより</small>
-
-<!--
-ここにいる皆さんはセキュリティキャンプについてすでに知っていらっしゃるかとは思いますが、少し説明すると、学生に対してセキュリティ技術を学んでもらうっていう合宿みたいなやつです。
--->
-
----
-layout: fact
----
-
-## セキュリティ・キャンプ 行ってきたよ
-
-<!--
-でまぁ、そんなところに行ってきたよと。
--->
-
----
-layout: fact
----
-
-## 何をしてきたのか
+1. はじめに 〜UniProのポリシー〜
+2. 現状と課題
+3. UniQUEの未来
+    - 何ができるか
+    - UniQUEのこれから
+4. Kubernetes マルチテナント計画
+    - システム構成
+    - RBACとOIDC
+    - Istio - mTLS
+    - HashiCorp Vault - KMS
+    - NFS CSI Driver - PV/PVC
+    - ArgoCD - CD
+5. おわりに
 
 <!--
-何をしてきたか
+
 -->
-
----
-layout: image
-image: "/static/imgs/muhaijuku.png"
----
-
-<!--
-無敗塾というEdTechサービスを通じたセキュリティについて考えました。
-今回はインシデント発生までを
--->
-
----
-layout: fact
----
-
-<v-clicks>
-
-## 一番印象に残ったこと
-
-## UniProでやりたいこと
-
-</v-clicks>
-
-<!--
-じゃあ今回何を話すかというと一番印象に残ったことというよりは、UniProでやりたいことを中心に話していこうと思っています。
--->
-
----
-
-# ログを集めよう
-
-<div class="flex flex-row items-start gap-8">
-<v-clicks>
-
-  <div class="flex-1">
-    <ul>
-      <v-clicks>
-        <li>ログを集めることはとても大事</li>
-        <li>ログがなければ<strong>インシデントに気づけない・対処できない</strong></li>
-        <li>なんのログを集めるかも大切
-          <ul>
-            <li>Audit Log</li>
-            <li>通信のログ</li>
-            <li>エラーログ
-              <ul>
-                <li>意図しない動作の検出</li>
-              </ul>
-            </li>
-            <li>etc...</li>
-          </ul>
-        </li>
-      </v-clicks>
-    </ul>
-  </div>
-
-  <div class="flex flex-col items-center justify-center gap-8 min-w-[200px] mx-auto">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Grafana_logo.svg/2005px-Grafana_logo.svg.png" alt="Grafana" class="w-40 h-auto drop-shadow-lg" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Grafana_loki_logo.png" alt="Loki" class="w-44 h-auto drop-shadow-lg" />
-  </div>
-</v-clicks>
-</div>
-
-<!--
-まず初めに、ログを集めよう
-
-- 構造化ロギング
-- ログの形式を整える
-  - どこまで揃えるかも重要
-
-揃えすぎると今度は独自のパラメータに対応できない
-
-UniProでは、GrafanaとLokiを使って頑張り始めましたよ
--->
-
----
-
-# Dev Sec Ops / Shift-Left
-
-<v-clicks>
-
-- 開発の遅延を抑えてセキュリティを向上しよう
-
-- アジャイルなどであるDevOpsにSecを加えてみる
-
-- ウォーターフォールで、セキュリティを開発の前の設計段階で適用する**Shift-Left**
-
-</v-clicks>
-
-<!--
-開発フローの話
-
-アジャイルよりのDevSecOps、ウォーターフォール向けのShift-Leftについて話す
-
-目的としては、(1)
-
-例えば、
--->
-
----
-
-# Shift-Left
-
-<img src="./static/imgs/shift-left.png" />
-
-<!--
-Shift-Leftの効果
-
-いつ修正するかによってコストが変わる
-
-で、なるべく最初に修正する方が手間がかからないよ
-
-なので、設計段階のうちにセキュリティについてよくよく考えておくことが大事
--->
-
----
-
-# DevSecOps
-
-<img src="./static/imgs/DevSecOps.png" />
-
-<!--
-DevSecOpsの図
-
-要件定義の時にセキュリティに関してある程度考えておきますよ
-
-各フェーズでそれぞれのセキュリティ活動を行いますよ
-
-CI/CDで自動化することも有効ですよ
--->
-
----
-
-# 設計パターンライブラリ
-
-<v-clicks>
-
-- 組織内パターンカタログを作成する
-
-- ユースケースや実装ガイドをまとめておき、ベストプラクティスを共有する
-
-## メリット
-
-- 設計品質の標準化
-
-- セキュリティリスクの低減
-
-- 知識共有の促進
-
-- 開発速度の向上
-
-</v-clicks>
-
-<!--
-設計パターンライブラリ
-
-組織内パターンカタログを作成する
-
-例えば、
-- OAuthクライアントのベストプラクティスはこんな感じ
-- RBACはこんな感じで実装するべき
-- ログインフォームのベストプラクティス
-などをカタログ化して共有する
-
-メリットとして
--->
-
----
-
-# 脅威モデリング
-
-<v-clicks>
-
-- **STRIDE**
-
-  - Spoofing(なりすまし)
-
-  - Tampering(改ざん)
-
-  - Repudiation(否認)
-
-  - Information Disclosure(情報漏洩)
-
-  - Denial of Service(サービス拒否)
-
-  - Elevation of Privilege(権限昇格)
-
-</v-clicks>
-
-<!--
-ここまでに話したセキュリティ対策をするために、じゃあどういう脅威があるかを知ろうというのがこれ
-
-STRIDEというフレームワーク
-
-否認は可用性の問題ですね。
-特定の処理を拒んだときということですね。
-
-サービス拒否
-これは全体が落ちること、否認は一部が落ちること
--->
-
----
-
-# 脅威モデリング
-
-<v-clicks>
-
-1. スコープの定義
-
-2. アーキテクチャ分析
-
-3. 脅威識別
-
-4. リスク評価
-
-</v-clicks>
-
-<!--
-順番は...
-
-どこまでを対象にモデリングするか
-
-DFD図の作成などどのような仕組みか
-
-どのような種類か
-
-どの程度の影響か
--->
-
----
-
-# 言語化する
-
-- 脅威文法を用いて考える
-  - どこで
-  - どんな時
-  - どんなことをすれば
-  - 何が
-  - どういう影響を受ける
-  - 犯人の目標は(機密性の低下、可用性の低下など)
-
-<!--
-さっきのモデリングしたやつを言語化することによって、具体的に何が問題なのかを明確に捉えられる
--->
-
----
-
-# コンテナは完璧ではない
-
-UniProではK8sを運用していますが...
-
-<v-clicks>
-
-- 一つのコンテナが侵害された時
-  - ネットワークを制限していないと他のコンテナや内部ネットへ
-  - コンテナブレイキング
-    - イメージの脆弱性
-  
-- kubeAPI露出しているとやばくね
-
-</v-clicks>
-
-<div class="flex flex-row items-center justify-end gap-8 mt-4">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/500px-Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes" class="w-24 h-24 object-contain" />
-  <img src="https://trivy.dev/v0.24.4/imgs/logo.png" alt="Trivy" class="w-24 h-24 object-contain" />
-</div>
-
-<!--
-よく、コンテナは分離されているから安全とかほざいている人がいます(少し前の私ですね)
-
-全然そんなことなくて...
-
-今UniProで運用しているK8sで、捕捉しているものだけでも、これだけあります
--->
-
----
-
-# セキュリティは技術者だけでは終わらない
-
-セキュリティは一般人も意識しなければならないことです。
-
-<v-clicks>
-
-- MFA疲労攻撃
-
-- PDFだと思ったものがMacの実行ファイルだった
-
-- なりすまし
-
-</v-clicks>
 
 ---
 layout: section
 ---
 
-# 最後に
+# 1. はじめに
+## 〜UniProのポリシー〜
+
+<!--
+-->
 
 ---
 
-# これからどうしていくか
+# UniProのポリシー
+
+UniProではこの3つを重要視しています。
 
 <v-clicks>
 
-- 今あるシステムの脅威モデリングをしてみる
-
-- 権限の見直し
-  - 最小権限の原則の徹底
-
-- 非技術者への啓発
-
-- ログを取る
-  - 構造化ロギング
-  - 共通化
-
-- trivyを回す
+1. できる限り無料で行う
+1. できる限りオープンにする
+1. できる限りセキュアにする
 
 </v-clicks>
 
+<!--
+-->
+
 ---
-layout: center
+layout: section
 ---
 
-# 終わり
+# 2. 現状と課題
+
+<!--
+-->
+
+---
+transition: none
+---
+
+<div class="absolute top-3">
+  <span class="font-600">
+    2. 現状と課題
+  </span>
+</div>
+
+# ID管理
+
+現在、UniProjectのメンバーには、以下のような機能を提供しています。
+
+- UniWiki (GROWI)
+- メール
+- Proxmox VE
+- Kubernetes
+- 蔵雲 (Next Cloud)
+
+etc...
+
+<!--
+-->
+
+---
+layout: fact
+---
+
+<div class="absolute top-3 left-10">
+  <span class="font-600">
+    2. 現状と課題
+  </span>
+</div>
+
+<v-clicks>
+
+# アカウントは役員が手動で管理している
+
+</v-clicks>
+
+<!--
+-->
+
+---
+transition: none
+---
+
+<div class="absolute top-3 left-10">
+  <span class="font-600">
+    2. 現状と課題
+  </span>
+</div>
+
+# KubernetesとProxmoxマルチテナント
+
+Proxmox VEとKubernetesでは、以下のような問題が発生しています。
+
+<v-switch>
+
+<template #1>
+
+- Proxmox VEのAdmin権限をもってしても、VMの中身を除けない
+    - VMのログを全て取り切っていないため、SSHのアタックなどを完全に検知できていない
+- KubernetesのRBACが曖昧
+- KubernetesのClusterAdmin権限を用いれば、全てのsecretの中身を覗くことができてしまう
+    - とはいえ、Kubernetesの管理者を育成するという観点からClusterAdminはつけておきたい
+- マイクロサービスアーキテクチャを目指しているにも関わらずmTLSすら組んでいない
+- KubernetesやProxmox VEのユーザー作成がだるい
+
+</template>
+
+<template #2>
+
+- <span class="disable">Proxmox VEのAdmin権限をもってしても、VMの中身を除けない</span>
+    - <span class="disable">VMのログを全て取り切っていないため、SSHのアタックなどを完全に検知できていない</span>
+- **KubernetesのRBACが曖昧**
+- **KubernetesのClusterAdmin権限を用いれば、全てのsecretの中身を覗くことができてしまう**
+    - **とはいえ、Kubernetesの管理者を育成するという観点からClusterAdminはつけておきたい**
+- **マイクロサービスアーキテクチャを目指しているにも関わらずmTLSすら組んでいない**
+- **KubernetesやProxmox VEのユーザー作成がだるい**
+
+</template>
+
+</v-switch>
+
+---
+layout: section
+---
+
+# 3. UniQUEの未来
+
+---
+
+<div class="absolute top-3 left-10">
+  <span class="font-600">
+    3. UniQUEの未来
+  </span>
+</div>
+
+
+# UniQUEの現状
+
+UniQUEとは、**UniProjectのメンバー管理ができる統合認証基盤**であり、2024年の夏頃から計画され、開発されてきた。
+
+<v-switch>
+
+<template #1>
+  <div class="flex flex-col items-center gap-6">
+    <div class="w-full max-w-4xl">
+      <div class="relative flex items-center justify-between px-2">
+        <div class="flex-1 h-1 bg-gray-200 absolute left-0 right-0 top-6"></div>
+        <div class="flex justify-between relative z-10 w-full">
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">1</div>
+            <div class="mt-2 text-sm text-center">設計開始<br/><span class="text-xs text-gray-500">2024 B</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">2</div>
+            <div class="mt-2 text-sm text-center">設計完了<br/><span class="text-xs text-gray-500">2025 B</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">3</div>
+            <div class="mt-2 text-sm text-center">開発開始<br/><span class="text-xs text-gray-500">2025 C</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold">4</div>
+            <div class="mt-2 text-sm text-center">Open Beta<br/><span class="text-xs text-gray-500">2025 D</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">5</div>
+            <div class="mt-2 text-sm text-center">Open Beta<br/><span class="text-xs text-gray-500">2026 A</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-2xl font-bold text-pink-600">Stage 4 — Open Beta (2025 D)</h3>
+      <ul class="list-disc ml-6 mt-3 text-lg">
+        <li>基本認証フロー（ログイン・SSO）</li>
+        <li>グループとロールの管理</li>
+        <li>メンバー登録申請の管理</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template #2>
+  <div class="flex flex-col items-center gap-6">
+    <div class="w-full max-w-4xl">
+      <div class="relative flex items-center justify-between px-2">
+        <div class="flex-1 h-1 bg-gray-200 absolute left-0 right-0 top-6"></div>
+        <div class="flex justify-between relative z-10 w-full">
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">1</div>
+            <div class="mt-2 text-sm text-center">設計開始<br/><span class="text-xs text-gray-500">2024 B</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">2</div>
+            <div class="mt-2 text-sm text-center">設計完了<br/><span class="text-xs text-gray-500">2025 B</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">3</div>
+            <div class="mt-2 text-sm text-center">開発開始<br/><span class="text-xs text-gray-500">2025 C</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-60 flex items-center justify-center font-bold">4</div>
+            <div class="mt-2 text-sm text-center">Open Beta<br/><span class="text-xs text-gray-500">2025 D</span></div>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">5</div>
+            <div class="mt-2 text-sm text-center">Production<br/><span class="text-xs text-gray-500">2026 A</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-2xl font-bold text-green-500">Stage 5 — Production (2026 A)</h3>
+      <ul class="list-disc ml-6 mt-3 text-lg">
+        <li>監査ログ</li>
+        <li>バグ修正</li>
+        <li>ドキュメント整備</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+</v-switch>
+
+---
+transition: none
+---
+
+<div class="absolute top-3 left-10">
+  <span class="font-600">
+    2. 現状と課題
+  </span>
+</div>
+
+# KubernetesとProxmoxマルチテナント
+
+Proxmox VEとKubernetesでは、以下のような問題が発生しています。
+
+<v-switch>
+
+<template #1>
+
+- <span class="disable">Proxmox VEのAdmin権限をもってしても、VMの中身を除けない</span>
+    - <span class="disable">VMのログを全て取り切っていないため、SSHのアタックなどを完全に検知できていない</span>
+- **KubernetesのRBACが曖昧**
+- **KubernetesのClusterAdmin権限を用いれば、全てのsecretの中身を覗くことができてしまう**
+    - **とはいえ、Kubernetesの管理者を育成するという観点からClusterAdminはつけておきたい**
+- **マイクロサービスアーキテクチャを目指しているにも関わらずmTLSすら組んでいない**
+- **KubernetesやProxmox VEのユーザー作成がだるい**
+
+</template>
+
+<template #2>
+
+- <span class="disable">Proxmox VEのAdmin権限をもってしても、VMの中身を除けない</span>
+    - <span class="disable">VMのログを全て取り切っていないため、SSHのアタックなどを完全に検知できていない</span>
+- **KubernetesのRBACが曖昧**
+- **KubernetesのClusterAdmin権限を用いれば、全てのsecretの中身を覗くことができてしまう**
+    - **とはいえ、Kubernetesの管理者を育成するという観点からClusterAdminはつけておきたい**
+- **マイクロサービスアーキテクチャを目指しているにも関わらずmTLSすら組んでいない**
+- <span class="disable"> ~~**KubernetesやProxmox VEのユーザー作成がだるい**~~ </span>
+
+</template>
+
+</v-switch>
+
+---
+layout: section
+---
+
+# 4. K8s マルチテナント計画
+
+---
+
+<div class="absolute top-3 left-10">
+  <span class="font-600">
+    4. K8s マルチテナント計画
+  </span>
+</div>
+
+
+// TODO: wip

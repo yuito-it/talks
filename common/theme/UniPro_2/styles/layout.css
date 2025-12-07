@@ -85,6 +85,18 @@
     @apply border border-gray-400 border-b-2 border-opacity-20 rounded;
     @apply bg-gray-400 bg-opacity-5 py-0.5 px-1 text-sm font-mono;
   }
+
+  ol {
+    @apply list-decimal flex flex-col gap-0 mb-0;
+  }
+  
+  ul {
+    @apply list-disc flex flex-col gap-0 mb-0;
+  }
+}
+
+.disable {
+  @apply pointer-events-none select-none text-gray-500 opacity-50;
 }
 
 .slidev-logo-bottomright {
