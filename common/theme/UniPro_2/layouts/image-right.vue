@@ -14,11 +14,11 @@ const style = computed(() => handleBackground(props.image))
 </script>
 
 <template>
-  <div class="grid grid-cols-2 w-full h-full" style="position:relative;">
-    <div class="slidev-layout default image-right my-auto" :class="props.class">
+  <div class="grid grid-cols-2 w-full h-full">
+    <div class="slidev-layout default image-right" :class="props.class">
       <slot />
+      <img class="slidev-logo-bottomright" src="/static/imgs/logo.png" alt="logo" />
     </div>
     <div class="my-14 mr-14" :style="style" />
-  <img class="slidev-logo-bottomright" src="/static/imgs/logo.png" alt="logo" />
   </div>
 </template>

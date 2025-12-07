@@ -16,9 +16,6 @@ export function handleBackground(background?: string, dim = false): CSSPropertie
     background: isColor
       ? background
       : undefined,
-    /*color: (background && !isColor)
-      ? 'white'
-      : undefined,*/
     backgroundImage: isColor
       ? undefined
       : background

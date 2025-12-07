@@ -1,14 +1,14 @@
 ---
 # You can also start simply with 'default'
-theme: ./theme
+theme: ../../../common/theme/UniPro_2
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: セキュリティ・キャンプのススメ
+title: UniProのセキュリティ〜KubernetesとUniQUEの未来〜
 info: |
-  ## セキュリティ・キャンプのススメ
-  セキュリティ・キャンプに行ってきて学んだことを話します。
+  ## UniProのセキュリティ〜KubernetesとUniQUEの未来〜
+  Kubernetesマルチテナントの今後とUniQUEの完成と活用に関して話します。
 # apply unocss classes to the current slide
 # class: text-center
 # https://sli.dev/features/drawing
@@ -31,25 +31,25 @@ seoMeta:
   articlePublishedTime: "2025-08-30"
   articleModifiedTime: "2025-08-30"
 layout: intro-image
-image: "./static/imgs/seccamp-logo.webp"
+image: "./static/imgs/thumbnail.png"
 talksSiteMetadata:
-  event: UniProject Summer LT 2025
-  date: "2025-08-30"
+  event: UniProject Winter LT 2025
+  date: "2025-12-25"
   location: Online
-  topic: Recommend Secamp
+  topic: Next Step of UniQUE and K8s
   info: |
-    セキュリティ・キャンプに行って学んできたことを話します。
+    Kubernetesマルチテナントの今後とUniQUEの完成と活用に関して話します。
 ---
 
 <div class="absolute top-10">
   <span class="font-700">
-    あかつきゆいと 2025/08/31
+    あかつきゆいと 2025/12/25
   </span>
 </div>
 
-<div class="absolute bottom-10">
-  <h1>セキュリティ・キャンプのススメ</h1>
-  <p>〜seccamp2025参加記〜</p>
+<div class="absolute bottom-3">
+  <h1>UniProのセキュリティ</h1>
+  <p>〜KubernetesとUniQUEの未来〜</p>
 </div>
 
 ---

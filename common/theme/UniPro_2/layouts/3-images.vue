@@ -19,12 +19,12 @@ const bottomRight = computed(() => handleBackground(props.imageBottomRight))
 </script>
 
 <template>
-  <div class="grid grid-cols-2 w-full h-full gap-x-7" style="position:relative;">
+  <div class="grid grid-cols-2 w-full h-full gap-x-7">
     <div class="ml-14 my-14" :style="left" />
     <div class="grid grid-rows-2 w-full h-full gap-y-7">
       <div class="mr-14 mt-14" :style="topRight" />
       <div class="mr-14 mb-14" :style="bottomRight" />
     </div>
-  <img class="slidev-logo-bottomright" src="/static/imgs/logo.png" alt="logo" />
+    <img class="slidev-logo-bottomright" src="/static/imgs/logo.png" alt="logo" />
   </div>
 </template>

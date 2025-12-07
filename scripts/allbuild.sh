@@ -2,9 +2,19 @@
 
 ROOT_DIR=$(pwd)
 mkdir -p "$ROOT_DIR/output"
+
+# Install theme packages first (each package under common/theme)
+for theme_pkg in $(find common/theme -type f -name package.json); do
+  theme_dir=$(dirname "$theme_pkg")
+  echo "Installing theme deps in $theme_dir"
+  (cd "$theme_dir" && npm install) || { echo "npm install failed in $theme_dir"; }
+done
+
 cd "$ROOT_DIR/scripts/node"
 npm install
 cd "$ROOT_DIR"
+
+
 
 for pkg in $(find slides -type f -name package.json); do
   slide_dir=$(dirname "$pkg")

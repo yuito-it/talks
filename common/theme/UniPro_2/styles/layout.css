@@ -98,7 +98,7 @@
 
 .slidev-layout.intro-image,
 .slidev-layout.intro {
-  @apply h-full;
+  @apply h-full text-black;
 
   h1 {
     @apply text-6xl font-700 leading-20;

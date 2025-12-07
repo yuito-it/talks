@@ -5,6 +5,7 @@
 :root {
   --prism-font-family: var(--slidev-code-font-family);
   --prism-background: var(--slidev-code-background);
+  
 }
 
 html:not(.dark) {

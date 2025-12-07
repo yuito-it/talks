@@ -11,8 +11,8 @@ const style = computed(() => handleBackground(props.image))
 </script>
 
 <template>
-  <div class="slidev-layout w-full h-full intro-image" :style="style" style="position:relative;">
+  <div class="slidev-layout w-full h-full intro-image" :style="style">
     <slot />
-  <img class="slidev-logo-bottomright" src="/static/imgs/logo.png" alt="logo" />
+    <img class="slidev-logo-bottomright" src="/static/imgs/logo.png" alt="logo" />
   </div>
 </template>
