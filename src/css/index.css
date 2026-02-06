@@ -133,14 +133,14 @@ tbody tr:hover {
   border: 1px solid #e6eef8;
   border-radius: 12px;
   padding: 14px;
-  width: 320px;
+  flex: 1 1 320px;
+  max-width: 320px;
+  min-width: 0;
   box-shadow: 0 8px 20px rgba(11, 37, 78, 0.06);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition:
-    transform 0.16s ease,
-    box-shadow 0.16s ease;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
 }
 .talk-card:hover {
   transform: translateY(-6px);
