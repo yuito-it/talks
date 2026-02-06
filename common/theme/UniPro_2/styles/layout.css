@@ -1,11 +1,17 @@
 .slidev-layout {
   @apply px-14 py-10 text-[1.1rem];
 
-  h1, h2, h3, h4, p, div {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  div {
     @apply select-none;
   }
 
-  pre, code {
+  pre,
+  code {
     @apply select-text;
   }
 
@@ -36,7 +42,9 @@
     @apply -mt-2 mb-4;
   }
 
-  p + h2, ul + h2, table + h2 {
+  p + h2,
+  ul + h2,
+  table + h2 {
     @apply mt-10;
   }
 
@@ -73,11 +81,13 @@
     @apply border-current border-b border-dashed hover:(text-$slidev-theme-primary border-solid);
   }
 
-  td, th {
+  td,
+  th {
     @apply p-2 py-3;
   }
 
-  b, strong {
+  b,
+  strong {
     @apply font-600;
   }
 
@@ -89,7 +99,7 @@
   ol {
     @apply list-decimal flex flex-col gap-0 mb-0;
   }
-  
+
   ul {
     @apply list-disc flex flex-col gap-0 mb-0;
   }
@@ -116,7 +126,8 @@
     @apply text-6xl font-700 leading-20;
   }
 
-  h1 + p {
+  h1 + p,
+  .subtitle {
     @apply font-700 -mt-4 text-2xl;
   }
 }
@@ -144,5 +155,20 @@
 .slidev-layout.section {
   h1 {
     @apply text-6xl font-500 leading-20;
+  }
+}
+
+.slidev-layout.end {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  min-height: 100%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3rem;
+  line-height: 0.8;
+  span {
+    transform: scaleX(0.7);
+    margin: 0;
+    padding: 0;
   }
 }
