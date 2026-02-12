@@ -34,6 +34,13 @@
       "location": "Yokkaichi City, Mie Pref.",
       "topic": "AI時代の情報収集と活用法",
       "language": "日本語"
+    },
+    {
+      "date": "2026-02-14",
+      "event": "セキュリティ・キャンプ フォーラム 2026",
+      "location": "Tokyo",
+      "topic": "UniQUE - 内製OAuth2/OIDC認証基盤のセキュリティ実装",
+      "language": "日本語"
     }
   ]
 }
