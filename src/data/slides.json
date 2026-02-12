@@ -1,38 +1,4 @@
 {
   "data": [
-    {
-      "topic": {
-        "title": "Starting K8s (and enhancing security)",
-        "description": "K8sやってるよっていう話と広告とセキュリティやり始めたよという話。\n"
-      },
-      "slides": [
-        {
-          "event": "All-Japan Security Camp 2025",
-          "location": "Tokyo",
-          "date": "2025-08-14",
-          "export": {
-            "pdf": "2025/seccamp/pdf",
-            "slides": "2025/seccamp"
-          }
-        }
-      ]
-    },
-    {
-      "topic": {
-        "title": "Git Tutorial",
-        "description": "Learn why we are using Git and how to use Git and GitHub simply.\n"
-      },
-      "slides": [
-        {
-          "event": "UniPro",
-          "location": "Online",
-          "date": "2025-08-09",
-          "export": {
-            "pdf": "2025/git-tutorial/pdf",
-            "slides": "2025/git-tutorial"
-          }
-        }
-      ]
-    }
   ]
 }
