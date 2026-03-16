@@ -63,7 +63,7 @@ jobs:
       - name: Deploy with Vercel
         run: |
           cd output
-          vercel deploy --prod -f --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
+          vercel deploy --prod -f --token=${{secrets.VERCEL_TOKEN}} > deployment-url.txt 2>error.txt
 
       - name: Set release url
         id: get_release_url
@@ -79,5 +79,5 @@ jobs:
 
       - name: Show Deployment URL
         run: |
-          deploy_url=$(cat deployment-url.txt) >> $GITHUB_ENV
+          deploy_url="https://talks.yuito-it.jp" >> $GITHUB_ENV
           echo "Deployment URL: $deploy_url"
