@@ -611,7 +611,7 @@ graph LR
     <p class="text-xl leading-10 text-slate-800">
       Discord の会話ログを、<br/>
       コミュニティ改善に使える形へ変える。<br/>
-      そのための最小構成が DiscordAnalyzeBot です。
+      そんな DiscordBot です。
     </p>
     <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
       <div class="rounded-lg bg-white/80 px-3 py-2 font-semibold text-slate-700">話題の見える化</div>
