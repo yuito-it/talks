@@ -606,18 +606,28 @@ graph LR
 
 # ご清聴ありがとうございました
 
-<div class="grid grid-cols-2 gap-8 mt-10 items-center">
-  <div>
-    <p class="text-xl leading-10">
+<div class="grid grid-cols-[1.15fr_0.85fr] gap-8 mt-8 items-stretch">
+  <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-7 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
+    <p class="text-xl leading-10 text-slate-800">
       Discord の会話ログを、<br/>
       コミュニティ改善に使える形へ変える。<br/>
       そのための最小構成が DiscordAnalyzeBot です。
     </p>
+    <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+      <div class="rounded-lg bg-white/80 px-3 py-2 font-semibold text-slate-700">話題の見える化</div>
+      <div class="rounded-lg bg-white/80 px-3 py-2 font-semibold text-slate-700">関係性の見える化</div>
+      <div class="rounded-lg bg-white/80 px-3 py-2 font-semibold text-slate-700">運営への示唆</div>
+      <div class="rounded-lg bg-white/80 px-3 py-2 font-semibold text-slate-700">次の改善アクション</div>
+    </div>
   </div>
-
-  <div class="rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 min-h-[220px] flex items-center justify-center text-center text-sm text-gray-500 p-6">
-    QR や成果物の画像をここに配置
-    <!-- TODO:画像 -->
+  <div class="rounded-2xl bg-white flex flex-col items-center justify-start">
+    <p class="text-sm font-bold tracking-wide text-slate-600">詳細はこちら</p>
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fanalyze-bot.uniproject.jp%2F"
+      alt="DiscordAnalyzeBot site QR code"
+      class="w-[280px] h-[280px] rounded-xl bg-white p-2 border border-slate-100 shadow-[0_10px_26px_rgba(15,23,42,0.14)]"
+    />
+    <p class="text-xs font-semibold text-blue-700">analyze-bot.uniproject.jp</p>
   </div>
 </div>
 
