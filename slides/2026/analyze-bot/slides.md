@@ -402,6 +402,42 @@ DiscordはURLやメンションなどのノイズが多いので、
 
 ---
 
+# 学習前後の比較
+
+<div class="grid grid-cols-2 gap-6 mt-6 items-stretch">
+  <div>
+    <div class="rounded-xl bg-blue-50 p-5 mb-4">
+      <div class="font-bold text-blue-700 mb-3">学習前（見づらい状態）</div>
+      <ul class="text-sm space-y-2">
+        <li>単語がバラバラで、話題が読み取りにくい</li>
+        <li>複合語が壊れて見える</li>
+      </ul>
+    </div>
+    <div class="rounded-xl bg-green-50 p-5">
+      <div class="font-bold text-green-700 mb-3">学習後（読みやすい状態）</div>
+      <ol class="text-sm ml-5 list-decimal space-y-2">
+        <li>文章が意味のまとまりで区切られている</li>
+        <li>複合語がまとまって読める</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="absolute top-2 max-w-[45%] max-h-[89%] right-10 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 min-h-[320px] flex flex-col items-center justify-center p-6 text-center text-sm text-gray-500">
+    <img src="./static/imgs/wordcloud_before.png" class="h-[40%]"/>
+    <span>↑before / after↓</span>
+    <img src="./static/imgs/wordcloud_after.png" class="max-h-[40%]"/>
+  </div>
+</div>
+
+<!--
+デモでは、同じデータで「学習前」と「学習後」を見せるのが最強です。
+
+難しい式を説明しなくても、
+「見づらい→見やすい」の変化だけで価値がしっかり伝わります。
+-->
+
+---
+
 # ネットワーク図の重みづけ
 
 <div class="flex items-center h-full max-h-[92vh] mt-0 w-full">
@@ -536,42 +572,6 @@ graph LR
 
 難しい単語を増やさず、
 結果の見やすさがどう変わるかだけを強調して話します。
--->
-
----
-
-# 学習前後の比較
-
-<div class="grid grid-cols-2 gap-6 mt-6 items-stretch">
-  <div>
-    <div class="rounded-xl bg-blue-50 p-5 mb-4">
-      <div class="font-bold text-blue-700 mb-3">学習前（見づらい状態）</div>
-      <ul class="text-sm space-y-2">
-        <li>単語がバラバラで、話題が読み取りにくい</li>
-        <li>複合語が壊れて見える</li>
-      </ul>
-    </div>
-    <div class="rounded-xl bg-green-50 p-5">
-      <div class="font-bold text-green-700 mb-3">学習後（読みやすい状態）</div>
-      <ol class="text-sm ml-5 list-decimal space-y-2">
-        <li>文章が意味のまとまりで区切られている</li>
-        <li>複合語がまとまって読める</li>
-      </ol>
-    </div>
-  </div>
-
-  <div class="absolute top-2 max-w-[45%] max-h-[89%] right-10 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 min-h-[320px] flex flex-col items-center justify-center p-6 text-center text-sm text-gray-500">
-    <img src="./static/imgs/wordcloud_before.png" />
-    <span>↑before / after↓</span>
-    <img src="./static/imgs/wordcloud_after.png" />
-  </div>
-</div>
-
-<!--
-デモでは、同じデータで「学習前」と「学習後」を見せるのが最強です。
-
-難しい式を説明しなくても、
-「見づらい→見やすい」の変化だけで価値がしっかり伝わります。
 -->
 
 ---
