@@ -540,7 +540,7 @@ graph LR
 
 ---
 
-# デモでここを見てほしい
+# 学習前後の比較
 
 <div class="grid grid-cols-2 gap-6 mt-6 items-stretch">
   <div>
@@ -548,21 +548,19 @@ graph LR
       <div class="font-bold text-blue-700 mb-3">学習前（見づらい状態）</div>
       <ul class="text-sm space-y-2">
         <li>単語がバラバラで、話題が読み取りにくい</li>
-        <li>複合語が壊れて見える例を1つ確認する</li>
-        <li>「どこがつらいか」を先に共有する</li>
+        <li>複合語が壊れて見える</li>
       </ul>
     </div>
     <div class="rounded-xl bg-green-50 p-5">
       <div class="font-bold text-green-700 mb-3">学習後（読みやすい状態）</div>
       <ol class="text-sm ml-5 list-decimal space-y-2">
-        <li>同じ期間で再生成した結果を表示する</li>
-        <li>複合語がまとまって読めることを示す</li>
-        <li>会話ネットワーク図と並べて関係性も見せる</li>
+        <li>文章が意味のまとまりで区切られている</li>
+        <li>複合語がまとまって読める</li>
       </ol>
     </div>
   </div>
 
-  <div class="absolute top-0 max-w-[45%] max-h-[90%] right-10 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 min-h-[320px] flex flex-col items-center justify-center p-6 text-center text-sm text-gray-500">
+  <div class="absolute top-2 max-w-[45%] max-h-[89%] right-10 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 min-h-[320px] flex flex-col items-center justify-center p-6 text-center text-sm text-gray-500">
     <img src="./static/imgs/wordcloud_before.png" />
     <span>↑before / after↓</span>
     <img src="./static/imgs/wordcloud_after.png" />
