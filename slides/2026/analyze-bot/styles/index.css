@@ -1,0 +1,10 @@
+.slidev-page .mermaid {
+  width: 100%;
+}
+
+.slidev-page .mermaid svg {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+}

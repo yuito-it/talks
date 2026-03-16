@@ -30,19 +30,45 @@ timer: countdown
 
 <!-- markdownlint-disable MD033 MD025 MD046 -->
 
-<div class="absolute top-10">
-  <span class="font-700">
+<div class="absolute top-8 left-8 z-20">
+  <span class="font-700 px-3 py-1 rounded-md text-sm tracking-wide">
     あかつきゆいと / N高グループ 通学コースLT 2025 2nd
   </span>
 </div>
 
-<div class="absolute bottom-3 max-w-4xl">
-  <p class="subtitle">Discord の会話を、あとから読める知見に変える</p>
-  <h1 class="mb-4">DiscordAnalyzeBot</h1>
-  <p>メッセージ収集・解析・ワードクラウド可視化</p>
-</div>
+<div class="grid grid-cols-[0.9fr_1.1fr] gap-6 h-[calc(100%-5rem)] pt-24 pb-8 pl-8 pr-0">
+  <div class="flex flex-col justify-end pb-10 pr-4">
+    <p class="mb-5 text-[1.55rem] font-700 leading-[1.25] max-w-[14em]">
+      Discord の会話を、<br/>
+      あとから読める知見に変える
+    </p>
+    <h1 class="mb-4 text-[3.15rem] leading-none tracking-tight">DiscordAnalyzeBot</h1>
+    <p class="text-[1.4rem] font-700 leading-snug max-w-[16em]">
+      メッセージ収集・解析・<br/>
+      ワードクラウド可視化
+    </p>
+  </div>
 
-<!-- TODO:画像 -->
+  <div class="flex h-full flex-col gap-4 pl-2 pr-0 pb-2">
+    <div class="relative h-[44%] overflow-hidden rounded-l-[2rem] bg-slate-50/80 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+      <img
+        src="./static/imgs/thumbnail.png"
+        alt="DiscordAnalyzeBot wordcloud preview"
+        class="absolute inset-0 h-full w-full object-cover"
+        style="opacity: 0.72; filter: saturate(0.95) blur(0.2px);"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-white/38 via-white/14 to-transparent"></div>
+    </div>
+    <div class="relative h-[50%] overflow-hidden rounded-l-[2rem] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+      <img
+        src="./static/imgs/network.png"
+        alt="DiscordAnalyzeBot network preview"
+        class="absolute inset-[6%_4%_7%_7%] h-[87%] w-[89%] object-contain"
+        style="filter: drop-shadow(0 16px 30px rgba(15, 23, 42, 0.14));"
+      />
+    </div>
+  </div>
+</div>
 
 <!--
 今日は DiscordAnalyzeBot という、コミュニティの会話を見える化する Bot を紹介します。
@@ -108,9 +134,9 @@ transition: fade
       <p class="text-3xl font-bold text-gray-800 animate__pulse animate__infinite">あかつきゆいと</p>
       <div class="flex flex-wrap gap-1 mt-1">
         <span class="px-2 py-0.5 text-xs rounded-full bg-blue-100 text-blue-700 font-semibold flex items-center gap-1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/500px-Kubernetes_logo_without_workmark.svg.png" width="16" height="16" alt="Kubernetes" /> Kubernetes</span>
-        <span class="px-2 py-0.5 text-xs rounded-full bg-cyan-100 text-cyan-700 font-semibold flex items-center gap-1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" width="16" height="16" alt="React"> React</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-cyan-100 text-cyan-700 font-semibold flex items-center gap-1"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="16" height="16" alt="React"> React</span>
         <span class="px-2 py-0.5 text-xs rounded-full bg-indigo-100 text-indigo-700 font-semibold flex items-center gap-1"><img src="https://img.icons8.com/fluent-systems-filled/512/nextjs.png" width="16" height="16" alt="Next.js"/> Next.js</span>
-        <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700 font-semibold flex items-center gap-1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm0FQokOsoKiCt3kSblkBIHosYTQ5--yTBYA&s" width="16" height="16" alt="Next.js"/> Vue.js</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700 font-semibold flex items-center gap-1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm0FQokOsoKiCt3kSblkBIHosYTQ5--yTBYA&s" width="16" height="16" alt="Vue.js"/> Vue.js</span>
         <span class="px-2 py-0.5 text-xs rounded-full bg-blue-200 text-blue-800 font-semibold flex items-center gap-1"><img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" width="16" height="16" alt="Next.js"/> Docker</span>
         <span class="px-2 py-0.5 text-xs rounded-full bg-pink-100 text-pink-700 font-semibold flex items-center gap-1">🔒 Security</span>
         <span class="px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-700 font-semibold flex items-center gap-1">etc...</span>
@@ -387,7 +413,7 @@ DiscordはURLやメンションなどのノイズが多いので、
 
 # ネットワーク図の重みづけ
 
-<div class="flex items-center justify-center h-full max-h-[56vh] overflow-auto mt-2">
+<div class="flex items-center h-full max-h-[92vh] mt-0 w-full">
 
 ```mermaid
 graph LR
@@ -444,7 +470,6 @@ graph LR
       <li>日本語ラベルの幅見積もりミス</li>
       <li>エッジを残しすぎたときの可読性崩壊</li>
     </ul>
-
     <div class="mt-4 rounded-lg bg-white p-3 text-xs text-gray-600">
       並列化に失敗したら逐次処理へフォールバックして、処理失敗を避ける。
     </div>
