@@ -95,6 +95,57 @@ Discord のログを集めるだけで終わらず、解析して、ワードク
 -->
 
 ---
+transition: fade
+---
+
+<div class="flex flex-row items-center justify-center w-full min-h-[350px] gap-16">
+  <!-- 自己紹介テキスト -->
+  <div class="flex flex-col justify-center items-start gap-4 max-w-[340px]">
+    <v-animate name="fadeInDown">
+      <h1 class="text-5xl font-extrabold text-pink-600 drop-shadow mb-2 tracking-tight">自己紹介</h1>
+    </v-animate>
+    <v-animate name="fadeInUp" :delay="300">
+      <p class="text-3xl font-bold text-gray-800 animate__pulse animate__infinite">あかつきゆいと</p>
+      <div class="flex flex-wrap gap-1 mt-1">
+        <span class="px-2 py-0.5 text-xs rounded-full bg-blue-100 text-blue-700 font-semibold flex items-center gap-1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/500px-Kubernetes_logo_without_workmark.svg.png" width="16" height="16" alt="Kubernetes" /> Kubernetes</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-cyan-100 text-cyan-700 font-semibold flex items-center gap-1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" width="16" height="16" alt="React"> React</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-indigo-100 text-indigo-700 font-semibold flex items-center gap-1"><img src="https://img.icons8.com/fluent-systems-filled/512/nextjs.png" width="16" height="16" alt="Next.js"/> Next.js</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700 font-semibold flex items-center gap-1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm0FQokOsoKiCt3kSblkBIHosYTQ5--yTBYA&s" width="16" height="16" alt="Next.js"/> Vue.js</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-blue-200 text-blue-800 font-semibold flex items-center gap-1"><img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" width="16" height="16" alt="Next.js"/> Docker</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-pink-100 text-pink-700 font-semibold flex items-center gap-1">🔒 Security</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-700 font-semibold flex items-center gap-1">etc...</span>
+      </div>
+      <div class="mt-3 text-base text-gray-600">
+        <span class="font-bold">所属：</span>
+        <ul class="list-disc list-inside ml-4">
+          <li>デジタル創作サークルUniProject</li>
+          <li>S高等学校</li>
+          <li>セキュリティ・キャンプ協議会<br/>コミュニティ支援グループ</li>
+        </ul>
+      </div>
+    </v-animate>
+  </div>
+  <!-- 写真2枚（アイコン・顔写真）を右側に重ねて配置 -->
+  <div class="relative flex flex-col items-center justify-center min-w-[200px] h-44" style="top: -24px;">
+    <v-animate name="zoomIn">
+      <img src="./static/imgs/icon.png" alt="icon" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg absolute top-0 right-2 z-20 bg-white" style="box-shadow:0 8px 32px 0 rgba(255,0,128,0.15);" />
+    </v-animate>
+    <v-animate name="zoomIn" :delay="200">
+      <img src="./static/imgs/face.jpg" alt="face" class="w-32 h-32 object-cover rounded-full border-4 border-blue-200 shadow-xl absolute bottom-0 left-2 z-10 bg-white" style="box-shadow:0 8px 32px 0 rgba(0,128,255,0.10);" />
+    </v-animate>
+  </div>
+</div>
+
+<!--
+もう自己紹介はあまりする必要もないですかね？
+
+一応しておきますか、あかつきゆいとと申します。
+
+ここ、UniProの創設者とかセキュキャン協議会の人やってたりします。
+コンテナ技術とかWeb系とかセキュリティとか、色々やってるS高生です。
+-->
+
+---
 
 # 目次
 
