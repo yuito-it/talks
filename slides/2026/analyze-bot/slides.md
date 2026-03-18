@@ -36,8 +36,8 @@ timer: countdown
   </span>
 </div>
 
-<div class="grid grid-cols-[0.9fr_1.1fr] gap-6 h-[calc(100%-5rem)] pt-24 pb-8 pl-8 pr-0">
-  <div class="flex flex-col justify-end pb-10 pr-4">
+<div class="grid grid-cols-[0.9fr_1.1fr] gap-6 h-[calc(100%-2rem)] pb-8 pl-8 pr-0">
+  <div class="flex flex-col justify-end pb-10 pr-4 pt-24">
     <p class="mb-5 text-[1.55rem] font-700 leading-[1.25] max-w-[14em]">
       Discord の会話を、<br/>
       あとから見える画像に変える
@@ -48,22 +48,20 @@ timer: countdown
     </p>
   </div>
 
-  <div class="flex h-full flex-col gap-4 pl-2 pr-0 pb-2">
-    <div class="relative h-[44%] overflow-hidden rounded-l-[2rem] bg-slate-50/80 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+  <div class="flex h-full flex-col gap-4 pl-2 pr-0 pt-10">
+    <div class="relative h-[200%] overflow-hidden rounded-l-[2rem] bg-slate-50/80 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
       <img
         src="./static/imgs/thumbnail.png"
         alt="DiscordAnalyzeBot wordcloud preview"
         class="absolute inset-0 h-full w-full object-cover"
-        style="opacity: 0.72; filter: saturate(0.95) blur(0.2px);"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-white/38 via-white/14 to-transparent"></div>
     </div>
-    <div class="relative h-[50%] overflow-hidden rounded-l-[2rem] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+    <div class="relative h-[200%] overflow-hidden rounded-l-[2rem] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
       <img
         src="./static/imgs/network.png"
         alt="DiscordAnalyzeBot network preview"
         class="absolute inset-[6%_4%_7%_7%] h-[87%] w-[89%] object-contain"
-        style="filter: drop-shadow(0 16px 30px rgba(15, 23, 42, 0.14));"
       />
     </div>
   </div>
@@ -258,6 +256,8 @@ layout: section
 ---
 
 # WordCloud編
+
+<img src="./static/imgs/thumbnail.png" alt="サムネイル" class="h-[30vh]" />
 
 ---
 
