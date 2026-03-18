@@ -678,16 +678,12 @@ graph LR
 # 実際の出力例
 
 <div class="grid grid-cols-2 gap-6 mt-8">
-  <div class="rounded-xl border-2 border-dashed border-pink-300 bg-pink-50 min-h-[280px] flex flex-col items-center justify-center text-center p-6">
-    <div class="font-bold text-pink-700 mb-2">ワードクラウド出力例</div>
-    <div class="text-sm text-gray-600">ここに実際の生成画像を配置</div>
-    <!-- TODO:画像 -->
+  <div class="rounded-xl border-2 border-dashed border-pink-300 bg-pink-50 min-h-[280px] flex flex-col items-center justify-center text-center p-2">
+    <img src="./static/imgs/wordcloud_schedule.png" alt="デイリーワードクラウドの生成例" />
   </div>
 
-  <div class="rounded-xl border-2 border-dashed border-blue-300 bg-blue-50 min-h-[280px] flex flex-col items-center justify-center text-center p-6">
-    <div class="font-bold text-blue-700 mb-2">会話ネットワーク出力例</div>
-    <div class="text-sm text-gray-600">ここに実際の生成画像を配置</div>
-    <!-- TODO:画像 -->
+  <div class="rounded-xl border-2 border-dashed border-blue-300 bg-blue-50 min-h-[280px] flex flex-col items-center justify-center text-center p-1">
+    <img src="./static/imgs/network.png" alt="ネットワーク図の生成例" />
   </div>
 </div>
 
