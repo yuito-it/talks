@@ -43,9 +43,8 @@ timer: countdown
       あとから見える画像に変える
     </p>
     <h1 class="mb-4 text-[3.15rem] leading-none tracking-tight">DiscordAnalyzeBot</h1>
-    <p class="text-[1.4rem] font-700 leading-snug max-w-[16em]">
-      メッセージ収集・解析・<br/>
-      ワードクラウド可視化
+    <p class="text-[1.4rem] font-700 leading-snug max-w-[16em] whitespace-nowrap">
+      メッセージ収集・解析・WordCloud可視化
     </p>
   </div>
 
@@ -392,11 +391,47 @@ layout: fact
 # バーガーキング問題
 # ミラノ風ドリア問題
 
+<v-clicks>
+
+命名: あかつきゆいと
+
+</v-clicks>
+
+---
+
+# 分断されている！
+
+<img src="./static/imgs/wordcloud_before_highlight.png" class="h-[40vh]" />
+
 ---
 
 # 連続語（N-gram）を作る
 
-<div class="grid grid-cols-2 gap-6 mt-8 text-sm">
+<div class="rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 p-6 mb-6 border border-purple-100">
+  <div class="flex items-center justify-center gap-4">
+    <div class="text-center">
+      <div class="text-lg font-bold text-gray-800">バーガー</div>
+      <div class="text-xs text-gray-600">noun</div>
+    </div>
+    <div class="text-3xl font-bold text-purple-500">+</div>
+    <div class="text-center">
+      <div class="text-lg font-bold text-gray-800">キング</div>
+      <div class="text-xs text-gray-600">noun</div>
+    </div>
+    <div class="text-3xl font-bold text-green-500">→</div>
+    <div class="rounded-lg bg-white px-4 py-2 border-2 border-green-200">
+      <div class="text-lg font-bold text-green-700">バーガーキング</div>
+      <div class="text-xs text-green-600">複合語</div>
+    </div>
+  </div>
+  <div class="mt-4 text-center text-sm text-purple-700 font-semibold">
+    🔗 隣り合っている状態で学習
+  </div>
+</div>
+
+<v-clicks>
+
+<div class="grid grid-cols-2 gap-6 text-sm">
   <div class="rounded-xl bg-pink-50 p-5">
     <div class="font-bold text-base mb-3 text-pink-700">よくある事故</div>
     <p class="leading-6">
@@ -423,6 +458,8 @@ layout: fact
 <div class="mt-6 rounded-lg bg-amber-50 p-4 text-sm">
   つまり「単語の並び」ではなく「元文の隣接関係」で学習するのがポイント。
 </div>
+
+</v-clicks>
 
 <!--
 ここは専門的に見えるけど、意味はシンプルです。
@@ -561,6 +598,12 @@ layout: fact
 -->
 
 ---
+layout: section
+---
+
+# ネットワーク図編
+
+---
 
 # ネットワーク図の重みづけ
 
@@ -608,7 +651,6 @@ graph LR
     <ul class="space-y-2 leading-6">
       <li><strong>ばねモデル配置（spring layout）</strong><br/>つながりが強いノード同士を近づける</li>
       <li><strong>ノード/文字サイズ自動調整</strong><br/>ノード数・ラベル長に応じて調整</li>
-      <li><strong>ラベル幅の見積もり</strong><br/>全角/半角の差を見て重なりを減らす</li>
       <li><strong>余白最適化</strong><br/>図全体が窮屈になりすぎないようにする</li>
     </ul>
   </div>
@@ -616,18 +658,12 @@ graph LR
   <div class="rounded-xl bg-red-50 p-5">
     <div class="font-bold text-base mb-3 text-red-700">実装でハマるところ</div>
     <ul class="space-y-2 leading-6">
-      <li>メッセージ境界をまたぐ誤 N-gram</li>
-      <li>Sudachi 並列化時の辞書利用エラー</li>
+      <li>画像を大きくすればするほど重たくなる</li>
       <li>日本語ラベルの幅見積もりミス</li>
-      <li>エッジを残しすぎたときの可読性崩壊</li>
+      <li>ノードを残しすぎたときの可読性崩壊</li>
     </ul>
-    <div class="mt-4 rounded-lg bg-white p-3 text-xs text-gray-600">
-      並列化に失敗したら逐次処理へフォールバックして、処理失敗を避ける。
-    </div>
   </div>
 </div>
-
-<!-- TODO:画像 -->
 
 <!--
 図を作る処理そのものより、
@@ -673,17 +709,17 @@ graph LR
 <div class="grid grid-cols-3 gap-5 mt-8">
   <div class="rounded-xl bg-pink-50 p-5">
     <div class="text-base font-bold mb-3 text-pink-600">話題が読みやすくなる</div>
-    <p class="text-sm leading-6">「自然 / 言語 / 処理」みたいな分断が減って、「自然言語処理」として読める。</p>
+    <p class="text-sm leading-6">コミュニティで今ホットな話題が一目瞭然になる。</p>
   </div>
 
   <div class="rounded-xl bg-blue-50 p-5">
-    <div class="text-base font-bold mb-3 text-blue-600">ノイズに埋もれにくい</div>
-    <p class="text-sm leading-6">URL や記号が目立つ状態から、会話の中身が主役の可視化に近づく。</p>
+    <div class="text-base font-bold mb-3 text-blue-600">モデレーションしやすくなる</div>
+    <p class="text-sm leading-6">人間関係が見えて、誰が仲が良いのか、異常値を見つけられると、それはなぜかを確認できて、いざこざを収めやすい。</p>
   </div>
 
   <div class="rounded-xl bg-green-50 p-5">
-    <div class="text-base font-bold mb-3 text-green-700">雰囲気を立体的に見れる</div>
-    <p class="text-sm leading-6">ワードクラウドは「何を話したか」、会話ネットワークは「誰と話したか」を見せる。</p>
+    <div class="text-base font-bold mb-3 text-green-700">新たなネタになる</div>
+    <p class="text-sm leading-6">変な言葉、普段使わない言葉が入っていると、メンバーが面白がって会話するきっかけになる。<br/>(最近だと「モンゴル」が話題に)</p>
   </div>
 </div>
 
@@ -731,7 +767,7 @@ graph LR
 # ご清聴ありがとうございました
 
 <div class="grid grid-cols-[1.15fr_0.85fr] gap-8 mt-8 items-stretch">
-  <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-7 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
+  <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-7">
     <p class="text-xl leading-10 text-slate-800">
       Discord の会話ログを、<br/>
       コミュニティ改善に使える形へ変える。<br/>
