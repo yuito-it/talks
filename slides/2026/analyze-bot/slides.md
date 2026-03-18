@@ -82,6 +82,10 @@ transition: fade
 
 # TL;DR
 
+<h2 class="text-center text-xl">
+  コミュニケーションを可視化するBot
+</h2>
+
 <div class="grid grid-cols-3 gap-5 mt-8">
   <div class="rounded-xl bg-pink-50 p-5">
     <div class="text-sm font-bold text-pink-600 mb-3">目的</div>
@@ -163,6 +167,55 @@ UniProの創設者とかセキュキャン協議会の人やってたりしま�
 -->
 
 ---
+transition: fade
+---
+
+# デジタル創作サークルUniProject
+
+<div class="grid grid-cols-[0.75fr_1.25fr] gap-5 h-[calc(100%-10rem)] pr-6 pb-0">
+  <div class="flex flex-col justify-center items-center pr-2">
+    <img src="./static/imgs/logo.png" class="w-60 h-auto mb-3" alt="UniProject Logo" />
+    <div class="rounded-full bg-green-50 px-3 py-1 border border-green-100 text-center">
+      <p class="text-[10px] font-bold text-green-700">🏆 セキュリティ・キャンプ アワード 講師賞受賞</p>
+    </div>
+  </div>
+  
+  <div class="flex flex-col justify-start gap-2.5 pr-2">
+    <div class="rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 p-4 border border-purple-100">
+      <div class="text-sm font-bold text-purple-700 mb-2">🎯 Mission</div>
+      <p class="text-2xl font-bold text-gray-800">すべての人にツクル楽しさを。</p>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="rounded-lg bg-blue-50 p-3 border border-blue-100">
+        <div class="text-xs font-bold text-blue-600 mb-2">技術基盤</div>
+        <ul class="text-xs space-y-1 text-gray-700">
+          <li>⚙️ Kubernetes運用</li>
+          <li>🔐 OIDC基盤 制作/運用</li>
+        </ul>
+      </div>
+      <div class="rounded-lg bg-pink-50 p-3 border border-pink-100">
+        <div class="text-xs font-bold text-pink-600 mb-2">創作活動</div>
+        <ul class="text-xs space-y-1 text-gray-700">
+          <li>🎨 イラスト</li>
+          <li>🎵 音楽制作</li>
+          <li>🎬 動画制作</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="rounded-lg bg-amber-50 p-3 border border-amber-100 text-center">
+        <div class="text-3xl font-bold text-amber-600">100</div>
+        <p class="text-xs text-gray-600 mt-1">総勢メンバー</p>
+      </div>
+      <div class="rounded-lg bg-amber-50 p-3 border border-amber-100 text-center">
+        <div class="text-3xl font-bold text-amber-600">Top 5</div>
+        <p class="text-xs text-gray-600 mt-1">Qiita年間5位</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
 
 # 目次
 
@@ -187,7 +240,7 @@ UniProの創設者とかセキュキャン協議会の人やってたりしま�
 <div class="grid grid-cols-3 gap-5 mt-8 text-sm">
   <div class="rounded-xl bg-pink-50 p-5">
     <div class="font-bold text-pink-700 mb-3">1. 何をしている？</div>
-    <p class="leading-6">会話ログをそのまま保存せず、読みやすい形に整理して返す Bot。</p>
+    <p class="leading-6">Discord内のコミュニケーションを可視化するBot。</p>
   </div>
 
   <div class="rounded-xl bg-blue-50 p-5">
@@ -197,13 +250,15 @@ UniProの創設者とかセキュキャン協議会の人やってたりしま�
 
   <div class="rounded-xl bg-green-50 p-5">
     <div class="font-bold text-green-700 mb-3">3. どこが大事？</div>
-    <p class="leading-6">単語を数える前の下処理で、見やすさがほぼ決まる。</p>
+    <p class="leading-6">単語の下処理とネットワーク図のレイアウト。</p>
   </div>
 </div>
 
-<div class="mt-6 rounded-lg bg-amber-50 p-4 text-sm">
-  この3点だけ持ち帰ってもらえたら、このLTは成功です。
-</div>
+---
+layout: section
+---
+
+# WordCloud編
 
 ---
 
@@ -326,7 +381,20 @@ DiscordはURLやメンションなどのノイズが多いので、
 
 ---
 
-# 連続語（N-gram）を雑に作ると事故る
+# ここまでで...
+
+<img src="./static/imgs/wordcloud_before.png" class="h-[40vh]" />
+
+---
+layout: fact
+---
+
+# バーガーキング問題
+# ミラノ風ドリア問題
+
+---
+
+# 連続語（N-gram）を作る
 
 <div class="grid grid-cols-2 gap-6 mt-8 text-sm">
   <div class="rounded-xl bg-pink-50 p-5">
@@ -371,8 +439,7 @@ DiscordはURLやメンションなどのノイズが多いので、
   <div class="rounded-xl bg-blue-50 p-5">
     <div class="font-bold text-base mb-3 text-blue-700">頻度だけでは不十分</div>
     <p class="leading-6">
-      たまたま同時に出ただけの語も多いので、
-      「一緒に出る必然性」が高い組み合わせだけ残す。
+      たまたま同時に出ただけの語も多いので、「一緒に出る必然性」が高い組み合わせだけ残す。
     </p>
   </div>
 
@@ -402,6 +469,63 @@ DiscordはURLやメンションなどのノイズが多いので、
 
 ---
 
+# バーガーキング
+
+<img src="./static/imgs/burgerking.png" class="h-[40vh]" />
+
+---
+
+# ミラノ風ドリア
+
+<img src="./static/imgs/mirano_doria.png" />
+
+---
+
+# 複合語学習の課題
+
+<div class="h-[calc(100%-9rem)] overflow-hidden flex flex-col">
+  <div class="grid grid-cols-2 gap-3 flex-1 min-h-0">
+    <div class="rounded-xl bg-green-50 border-2 border-green-200 p-4">
+      <div class="text-lg font-bold text-green-700 mb-3">✅ うまくいく例</div>
+      <div class="bg-white rounded-lg p-3 mb-3">
+        <p class="text-sm font-semibold text-gray-800">バーガーキング</p>
+        <div class="flex items-center gap-2 mt-2 text-xs">
+          <span class="text-gray-600">「バーガー」「キング」</span>
+          <span class="text-sm">→</span>
+        </div>
+        <div class="mt-2 bg-green-100 text-green-700 px-3 py-2 rounded text-sm font-bold text-center">
+          「バーガーキング」
+        </div>
+      </div>
+      <p class="text-xs text-green-700 leading-6">
+        両方の語が名詞として抽出されるので、N-gram でうまく複合語にできる。
+      </p>
+    </div>
+    <div class="rounded-xl bg-red-50 border-2 border-red-200 p-4">
+      <div class="text-lg font-bold text-red-700 mb-3">❌ 困難な例</div>
+      <div class="bg-white rounded-lg p-3 mb-3">
+        <p class="text-sm font-semibold text-gray-800">ミラノ風ドリア</p>
+        <div class="flex items-center gap-2 mt-2 text-xs">
+          <span class="text-gray-600">「ミラノ」「ドリア」</span>
+          <span class="text-sm">→</span>
+        </div>
+        <div class="mt-2 bg-red-100 text-red-700 px-3 py-2 rounded text-sm font-bold text-center">
+          N-gram できない
+        </div>
+      </div>
+      <p class="text-xs text-red-700 leading-6">
+        「風」は接尾辞 / 形状詞で名詞判別から漏れるため、間に何もない状態に。
+      </p>
+    </div>
+  </div>
+  <div class="mt-2 rounded-lg bg-amber-50 border-l-4 border-amber-400 p-3">
+    <p class="text-xs font-bold text-amber-800 mb-1">⚠️ 今後の課題</p>
+    <p class="text-xs text-amber-900">判定範囲の微調整が必要だが、言語処理の精度と複雑さのバランスが難しい領域</p>
+  </div>
+</div>
+
+---
+
 # 学習前後の比較
 
 <div class="grid grid-cols-2 gap-6 mt-6 items-stretch">
@@ -423,9 +547,9 @@ DiscordはURLやメンションなどのノイズが多いので、
   </div>
 
   <div class="absolute top-2 max-w-[45%] max-h-[89%] right-10 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 min-h-[320px] flex flex-col items-center justify-center p-6 text-center text-sm text-gray-500">
-    <img src="./static/imgs/wordcloud_before.png" class="h-[40%]"/>
+    <img src="./static/imgs/wordcloud_before.png" class="h-[40%]" alt="学習前の図" />
     <span>↑before / after↓</span>
-    <img src="./static/imgs/wordcloud_after.png" class="max-h-[40%]"/>
+    <img src="./static/imgs/wordcloud_after.png" class="max-h-[40%]" alt="学習後の図" />
   </div>
 </div>
 
