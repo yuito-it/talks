@@ -603,6 +603,8 @@ layout: section
 
 # ネットワーク図編
 
+<img src="./static/imgs/network.png" alt="サムネイル" class="h-[30vh]" />
+
 ---
 
 # ネットワーク図の重みづけ
