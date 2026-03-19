@@ -10,7 +10,6 @@ transition: slide-left
 mdc: true
 colorSchema: light
 seoMeta:
-  ogImage: auto
   twitterSite: yuito_it_
   twitterCard: summary_large_image
   articleAuthor: "Yuito Akatsuki"
