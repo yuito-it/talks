@@ -145,7 +145,7 @@ transition: fade
       <ul class="text-sm space-y-1.5 text-gray-700 leading-relaxed list-disc list-inside">
         <li>デジタル創作サークル UniProject</li>
         <li>S高等学校</li>
-        <li>セキュリティ・キャンプ協議会 ステアリングコミッティ</li>
+        <li>セキュリティ・キャンプ協議会</li>
         <li>etc...</li>
       </ul>
     </div>
